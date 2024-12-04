@@ -6,7 +6,7 @@ thread_local! {
 
 #[ic_cdk::update]
 fn add_msg(new_msg: String) {
-    ic_cdk::sprint in!("{}",new_msg);
+    
     CHAT.with(|chat| {
         chat.borrow_mut().push(new_msg)
     })
