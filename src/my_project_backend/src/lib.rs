@@ -12,7 +12,7 @@ fn set_msg(new_msg: String) {
 }
 
 #[ic_cdk::query]
-fn get_msg() -> String {
+fn get_msg() -> Vec<String> {
     CHAT.with(|chat| chat.borrow().clone())
 }
 
